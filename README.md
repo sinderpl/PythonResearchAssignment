@@ -1,2 +1,2 @@
 # PythonResearchAssignment
-A assignment in Python programming exploring the capabilities of the language and its 
+A assignment in Python programming exploring the capabilities of the language and its libraries
