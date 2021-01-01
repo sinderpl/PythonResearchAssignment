@@ -8,30 +8,12 @@ Threading will be used to optimise this process
 """
 
 import concurrent.futures
+import multiprocessing as mp
 from multiprocessing import Pool
 
+max_cores = mp.cpu_count()
 
-def count_occurences(data: []) -> {}:
-    """
-    Counts word occurences within the data provided
-
-    Parameters
-    ----------
-    data : []
-          Book data split up into lines
-
-    Returns
-    -------
-    {}
-        A dictionairy of words with their occurences within the book
-
-    """
-    return {}
-
-def f(x):
-    return x * x
-
-def map(func , data: []) -> {}:
+def map_threaded(func , data: []) -> {}:
     """
     
     Executes the specified function provided by the user on a number of threads
@@ -39,27 +21,41 @@ def map(func , data: []) -> {}:
     Parameters
     ----------
     func : TYPE
-        DESCRIPTION.
+        function for processing
     data : []
-        DESCRIPTION.
+        Iterable data set
 
     Returns
     -------
-    None.
+    output : Dictionairy
+        List of outputs for further reduction and reconciliation
 
     """
     output = list()
-    # with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-    #     executor.map(func, data)
-    # return output
-    
-    # with Pool(2) as p:
-    #     p.map(func, data)
-    # return {}
-    
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_cores) as executor:
+        output += executor.map(func, data)
+    return output
+
+def map_multiprocess(func, data: []) -> {}:
+    """
+    Executes the specified function provided by the user on a number of multi process threads
+
+    Parameters
+    ----------
+    func : TYPE
+        function for processing
+    data : []
+        Iterable data set
+
+    Returns
+    -------
+    output : Dictionairy
+         List of outputs for further reduction and reconciliation
+
+    """
     output = list()
-    with Pool(2) as p:
-        output = p.map(func, data)
+    with Pool(max_cores) as p:
+        output += p.map(func, data)
     return output
     
 def reduce(func, data: []) -> {}:

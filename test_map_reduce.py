@@ -34,9 +34,9 @@ def test_map_word_count_timing():
     
     t0 = time.time()
     reduce_output = map_reduce.map(main.map_word_count, contents)
-    # t1 = time.time()
-    # total_runtime_threaded = t1 - t0
-    # print("Runtime of threaded method : ",  total_runtime_threaded)
+    t1 = time.time()
+    total_runtime_threaded = t1 - t0
+    print("Runtime of threaded method : ",  total_runtime_threaded)
     
     #print(reduce_output)
     assert(True)

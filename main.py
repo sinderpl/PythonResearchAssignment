@@ -7,9 +7,10 @@ Reads in text files and analyzes the data contained within it
 
 import re
 import map_reduce as mpr
+import time
 
 user_loop = True
-test_book = "data/pride_prejudice.txt"
+test_book = "data/pride_prejudice_long.txt"
 
 def read_text_file()-> []:
     """
@@ -53,8 +54,34 @@ def map_word_count(data: []) -> {}:
         pass
     return result
 
+
+def test_runtimes(file_content):
+    
+    # runtime for the default method implementation
+    t0 = time.time()
+    map_word_count(str(file_content))
+    t1 = time.time()
+    total_runtime_threaded = t1 - t0
+    print("Runtime of default method : ",  total_runtime_threaded)
+    
+    # runtime for the default python threading library
+    t0 = time.time()
+    mpr.map_threaded(map_word_count, file_content)
+    t1 = time.time()
+    total_runtime_threaded = t1 - t0
+    print("Runtime of threaded method : ",  total_runtime_threaded)
+    
+    # runtime for the multiprocessing python library
+    t0 = time.time()
+    mpr.map_multiprocess(map_word_count, file_content)
+    t1 = time.time()
+    total_runtime_threaded = t1 - t0
+    print("Runtime of multiprocessing method : ",  total_runtime_threaded)
+    
 if __name__ == "__main__":
     file_content = read_text_file()
     #print(map_word_count(str(file_content)))
     #mpr.map(map_word_count, file_content)
-    print(mpr.map(map_word_count, file_content))
+    test_runtimes(file_content)    
+    
+    
