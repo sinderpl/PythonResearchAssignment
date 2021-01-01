@@ -27,7 +27,7 @@ def read_text_file()-> []:
         contents = file.readlines()
         return contents
 
-def map_book(data: []) -> {}:
+def map_word_count(data: []) -> {}:
     """
      Maps the words in a array treating each item in array as a line
 
@@ -42,20 +42,19 @@ def map_book(data: []) -> {}:
 
     """
     result = {}
-    #for line in data:
-    #for word in data:
-    print(data)
-    words  = re.findall(r'\w+', data)
-    
-    for word in words:
-        if word in result:
-            result[word] = result[word] + 1
-        else :
-            result[word] = 1
-    #print(result)
+    try:
+        words  = re.findall(r'\w+', data)
+        for word in words:
+            if word in result:
+                result[word] = result[word] + 1
+            else :
+                result[word] = 1
+    except TypeError :
+        pass
     return result
 
 if __name__ == "__main__":
     file_content = read_text_file()
-    mpr.map(map_book, file_content)
-    #print(mpr.map(map_book, file_content))
+    #print(map_word_count(str(file_content)))
+    #mpr.map(map_word_count, file_content)
+    print(mpr.map(map_word_count, file_content))

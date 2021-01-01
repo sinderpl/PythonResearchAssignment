@@ -8,6 +8,7 @@ Threading will be used to optimise this process
 """
 
 import concurrent.futures
+from multiprocessing import Pool
 
 
 def count_occurences(data: []) -> {}:
@@ -27,6 +28,9 @@ def count_occurences(data: []) -> {}:
     """
     return {}
 
+def f(x):
+    return x * x
+
 def map(func , data: []) -> {}:
     """
     
@@ -44,8 +48,33 @@ def map(func , data: []) -> {}:
     None.
 
     """
+    output = list()
+    # with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+    #     executor.map(func, data)
+    # return output
     
-    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-        output = executor.map(func, data)
-        #print(output)
-    return func(data)
+    # with Pool(2) as p:
+    #     p.map(func, data)
+    # return {}
+    
+    output = list()
+    with Pool(2) as p:
+        output = p.map(func, data)
+    return output
+    
+def reduce(func, data: []) -> {}:
+    """
+    Reduces the inputs based on the function provided by the caller
+
+    Parameters
+    ----------
+    func : TYPE
+        DESCRIPTION.
+    data : []
+        DESCRIPTION.
+
+    Returns
+    -------
+    None.
+
+    """
