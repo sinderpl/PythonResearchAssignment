@@ -14,6 +14,18 @@ import time
 import main
 
 def test_runtimes_map(file_content):
+    """
+    Using this function we can test the filtering runtimes using different capabilities of Python
+
+    Parameters
+    ----------
+    file_content : Word text which you want to run the methods testing on
+
+    Returns
+    -------
+    None.
+
+    """
     
     # runtime for the default method implementation
     t0 = time.time()
@@ -35,3 +47,7 @@ def test_runtimes_map(file_content):
     t1 = time.time()
     total_runtime_threaded = t1 - t0
     print("Runtime of multiprocessing method : ",  total_runtime_threaded)
+    
+    
+def test_runtimes_reduce(outputs):
+    return 0

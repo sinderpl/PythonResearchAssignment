@@ -16,9 +16,12 @@ input_words = ["Lorem ipsum , lorem"
                ,"magna aliqua."
                ,"veniam"]
 
-expected_outputs = [{'lorem': 2, 'ipsum': 1},
+expected_outputs_threading = [{'lorem': 2, 'ipsum': 1},
                     {'magna': 1, 'aliqua': 1},
                     {'veniam': 1}]
+
+expected_outputs_normal_function = {'lorem': 2, 'ipsum': 1,
+                    'magna': 1, 'aliqua': 1, 'veniam': 1}
 
 def test_threaded_word_count():
     """
@@ -30,7 +33,7 @@ def test_threaded_word_count():
 
     """
     output = map_reduce.map_threaded(main.map_word_count, input_words)
-    assert(output == expected_outputs)
+    assert(output == expected_outputs_threading)
     
 def test_multiprocess_word_count():
     """
@@ -41,4 +44,16 @@ def test_multiprocess_word_count():
 
     """
     output = map_reduce.map_multiprocess(main.map_word_count, input_words)
-    assert(output == expected_outputs)
+    assert(output == expected_outputs_threading)
+    
+def test_map_word_count():
+    """
+    Test the word count function
+
+    Returns
+    -------
+    None.
+
+    """
+    output = main.map_word_count(str(input_words))
+    assert(output == expected_outputs_normal_function)
