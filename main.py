@@ -10,9 +10,10 @@ import map_reduce
 import assistance_functions
 
 user_loop = True
-test_book = "data/pride_prejudice_long.txt"
+test_book_long = "data/pride_prejudice_long.txt"
+test_book_short = "data/pride_prejudice.txt"
 
-def read_text_file()-> []:
+def read_text_file(file_to_read)-> []:
     """
     Reads in a user specified file and returns it as an array of lines
 
@@ -25,7 +26,7 @@ def read_text_file()-> []:
     #while user_loop:
     #user_choice = input("")
     try:
-        with open(test_book, encoding='utf8') as file:
+        with open(file_to_read, encoding='utf8') as file:
             contents = file.readlines()
             return contents
     except FileNotFoundError:
@@ -82,7 +83,7 @@ def test_runtimes_reduce(outputs):
     
 if __name__ == "__main__":
     file_content = read_text_file()
-    assistance_functions.test_runtimes_map(file_content)
+    #assistance_functions.test_runtimes_map(file_content)
     #print(map_word_count(str(file_content)))
     #mpr.map(map_word_count, file_content)
     #test_runtimes(file_content)
