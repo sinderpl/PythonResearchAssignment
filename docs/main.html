@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module main</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>main</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Calann%5Cdesktop%5Cmaster%202020%5Capplied%20scripting1%5Cpythonresearchassignment%5Cmain.py">c:\users\alann\desktop\master 2020\applied scripting1\pythonresearchassignment\main.py</a></font></td></tr></table>
+    <p><tt>Reads&nbsp;in&nbsp;text&nbsp;files&nbsp;and&nbsp;analyzes&nbsp;the&nbsp;data&nbsp;contained&nbsp;within&nbsp;it<br>
+&nbsp;<br>
+@author:&nbsp;A00209408</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="assistance_functions.html">assistance_functions</a><br>
+</td><td width="25%" valign=top><a href="map_reduce.html">map_reduce</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-map_word_count"><strong>map_word_count</strong></a>(data: []) -&gt; {}</dt><dd><tt>&nbsp;Maps&nbsp;the&nbsp;words&nbsp;in&nbsp;a&nbsp;array&nbsp;treating&nbsp;each&nbsp;item&nbsp;in&nbsp;array&nbsp;as&nbsp;a&nbsp;line<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+data&nbsp;:&nbsp;[]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Array&nbsp;of&nbsp;lines&nbsp;from&nbsp;the&nbsp;book<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+result&nbsp;:&nbsp;dictionairy&nbsp;of&nbsp;word&nbsp;occurences</tt></dd></dl>
+ <dl><dt><a name="-map_word_reduce"><strong>map_word_reduce</strong></a>(data: [], result_dictionary: {}) -&gt; {}</dt><dd><tt>Reconciles&nbsp;the&nbsp;output&nbsp;data&nbsp;and&nbsp;parses&nbsp;it&nbsp;back&nbsp;into&nbsp;a&nbsp;single&nbsp;dictionary<br>
+using&nbsp;thread&nbsp;locks&nbsp;to&nbsp;avoid&nbsp;race&nbsp;conditions<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+data&nbsp;:&nbsp;[]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Otuput&nbsp;data&nbsp;from&nbsp;map&nbsp;methods&nbsp;split&nbsp;into&nbsp;chunks.<br>
+result_dictionary&nbsp;:&nbsp;{}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DESCRIPTION.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+result_dictionary&nbsp;:&nbsp;dictionairy&nbsp;of&nbsp;word&nbsp;occurences</tt></dd></dl>
+ <dl><dt><a name="-map_word_reduce_iterate"><strong>map_word_reduce_iterate</strong></a>(data: [], result_dictionary: {}) -&gt; {}</dt><dd><tt>Iterates&nbsp;over&nbsp;the&nbsp;outer&nbsp;structures&nbsp;of&nbsp;the&nbsp;file&nbsp;so&nbsp;that&nbsp;it&nbsp;can&nbsp;be&nbsp;used&nbsp;<br>
+with&nbsp;normal&nbsp;array&nbsp;with&nbsp;the&nbsp;reduce&nbsp;method<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+data&nbsp;:&nbsp;[]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lines&nbsp;of&nbsp;data&nbsp;to&nbsp;iterate&nbsp;over&nbsp;and&nbsp;reduce<br>
+result_dictionary&nbsp;:&nbsp;{}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Output&nbsp;word&nbsp;counts<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+result_dictionary&nbsp;:Dictionairy&nbsp;of&nbsp;word&nbsp;counts</tt></dd></dl>
+ <dl><dt><a name="-read_text_file"><strong>read_text_file</strong></a>(file_to_read) -&gt; []</dt><dd><tt>Reads&nbsp;in&nbsp;a&nbsp;user&nbsp;specified&nbsp;file&nbsp;and&nbsp;returns&nbsp;it&nbsp;as&nbsp;an&nbsp;array&nbsp;of&nbsp;lines<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+[]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Array&nbsp;of&nbsp;lines&nbsp;from&nbsp;the&nbsp;text&nbsp;file</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>test_book_long</strong> = 'data/pride_prejudice_long.txt'<br>
+<strong>test_book_short</strong> = 'data/pride_prejudice.txt'<br>
+<strong>user_loop</strong> = True</td></tr></table>
+</body></html>

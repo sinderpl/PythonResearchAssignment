@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module test_map_reduce</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>test_map_reduce</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Calann%5Cdesktop%5Cmaster%202020%5Capplied%20scripting1%5Cpythonresearchassignment%5Ctest_map_reduce.py">c:\users\alann\desktop\master 2020\applied scripting1\pythonresearchassignment\test_map_reduce.py</a></font></td></tr></table>
+    <p><tt>Testing&nbsp;for&nbsp;the&nbsp;map&nbsp;reduce&nbsp;methods<br>
+&nbsp;<br>
+@author:&nbsp;A00209408</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="main.html">main</a><br>
+</td><td width="25%" valign=top><a href="map_reduce.html">map_reduce</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-test_map_word_count"><strong>test_map_word_count</strong></a>()</dt><dd><tt>Test&nbsp;the&nbsp;word&nbsp;count&nbsp;function<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+None.</tt></dd></dl>
+ <dl><dt><a name="-test_map_word_reduce"><strong>test_map_word_reduce</strong></a>()</dt><dd><tt>Test&nbsp;the&nbsp;reduce&nbsp;function&nbsp;for&nbsp;normal&nbsp;code&nbsp;execution<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+None.</tt></dd></dl>
+ <dl><dt><a name="-test_multiprocess_word_count"><strong>test_multiprocess_word_count</strong></a>()</dt><dd><tt>Test&nbsp;the&nbsp;multiprocess&nbsp;map&nbsp;function<br>
+Returns<br>
+-------<br>
+None.</tt></dd></dl>
+ <dl><dt><a name="-test_threaded_word_count"><strong>test_threaded_word_count</strong></a>()</dt><dd><tt>Test&nbsp;the&nbsp;threaded&nbsp;map&nbsp;function<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+None.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>contents</strong> = ['<font color="#c040c0">\n</font>', 'Chapter 1<font color="#c040c0">\n</font>', '<font color="#c040c0">\n</font>', 'It is a truth universally acknowledged, that a single man in<font color="#c040c0">\n</font>', 'possession of a good fortune, must be in want of a wife.<font color="#c040c0">\n</font>', '<font color="#c040c0">\n</font>', 'However little known the feelings or views of such a man may be<font color="#c040c0">\n</font>', 'on his first entering a neighbourhood, this truth is so well<font color="#c040c0">\n</font>', 'fixed in the minds of the surrounding families, that he is<font color="#c040c0">\n</font>', 'considered the rightful property of some one or other of their<font color="#c040c0">\n</font>', 'daughters.<font color="#c040c0">\n</font>', '<font color="#c040c0">\n</font>', '“My dear Mr. Bennet,” said his lady to him one day, “have you<font color="#c040c0">\n</font>', 'heard that Netherfield Park is let at last?”<font color="#c040c0">\n</font>', '<font color="#c040c0">\n</font>', 'Mr. Bennet replied that he had not.<font color="#c040c0">\n</font>', '<font color="#c040c0">\n</font>', '“But it is,” returned she; “for Mrs. Long has just been here, and<font color="#c040c0">\n</font>', 'she told me all about it.”<font color="#c040c0">\n</font>', '<font color="#c040c0">\n</font>', ...]<br>
+<strong>expected_outputs_normal_function</strong> = {'aliqua': 1, 'ipsum': 1, 'lorem': 3, 'magna': 1, 'veniam': 2}<br>
+<strong>expected_outputs_threading</strong> = [{'ipsum': 1, 'lorem': 2, 'veniam': 1}, {'aliqua': 1, 'lorem': 1, 'magna': 1}, {'veniam': 1}]<br>
+<strong>file</strong> = &lt;_io.TextIOWrapper name='data/pride_prejudice_long.txt' mode='r' encoding='utf8'&gt;<br>
+<strong>input_words</strong> = ['Lorem ipsum , lorem veniam', 'magna aliqua. Lorem', 'veniam']</td></tr></table>
+</body></html>
