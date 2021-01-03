@@ -85,6 +85,30 @@ def map_word_reduce(data: [], result_dictionary: {}) -> {}:
             result_dictionary[word] = occurence
     return result_dictionary
 
+def map_word_reduce(data: [], result_dictionary: {}) -> {}:
+    """
+    Reconciles the output data and parses it back into a single dictionary
+    using thread locks to avoid race conditions
+
+    Parameters
+    ----------
+    data : []
+        Otuput data from map methods split into chunks.
+    result_dictionary : {}
+        DESCRIPTION.
+
+    Returns
+    -------
+    result_dictionary : dictionairy of word occurences
+
+    """
+    for word, occurence in data.items():
+        if word in result_dictionary:
+            result_dictionary[word] += occurence
+        else:
+            result_dictionary[word] = occurence
+    return result_dictionary
+
 def map_word_reduce_iterate(data: [], result_dictionary: {}) -> {}:
     """
     Iterates over the outer structures of the file so that it can be used 

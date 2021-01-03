@@ -58,4 +58,15 @@ def test_map_word_count():
     output = main.map_word_count(str(input_words))
     assert(output == expected_outputs_normal_function)
     
-    
+def test_map_word_reduce():
+    """
+    Test the reduce function for normal code execution
+
+    Returns
+    -------
+    None.
+
+    """
+    output = {}
+    main.map_word_reduce_iterate(expected_outputs_threading, output)
+    assert(output == expected_outputs_normal_function)
