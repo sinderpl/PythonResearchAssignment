@@ -79,3 +79,24 @@ def reduce_multiprocess(func, data: []) -> {}:
     with Pool(max_cores) as p:
         p.map(partial(func, result_dictionary=output), data)
     return output
+
+def reduce_threaded(func , data: []) -> {}:
+    """
+    
+
+    Parameters
+    ----------
+    func : TYPE
+        DESCRIPTION.
+    data : []
+        DESCRIPTION.
+
+    Returns
+    -------
+    output : TYPE
+        DESCRIPTION.
+
+    """
+    output = list()
+    
+    return output

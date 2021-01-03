@@ -12,16 +12,16 @@ contents = {}
 with open("data/pride_prejudice_long.txt", encoding='utf8') as file:
     contents = file.readlines()
 
-input_words = ["Lorem ipsum , lorem"
-               ,"magna aliqua."
+input_words = ["Lorem ipsum , lorem veniam"
+               ,"magna aliqua. Lorem"
                ,"veniam"]
 
-expected_outputs_threading = [{'lorem': 2, 'ipsum': 1},
-                    {'magna': 1, 'aliqua': 1},
+expected_outputs_threading = [{'lorem': 2, 'ipsum': 1, 'veniam': 1},
+                    {'magna': 1, 'aliqua': 1, 'lorem': 1},
                     {'veniam': 1}]
 
-expected_outputs_normal_function = {'lorem': 2, 'ipsum': 1,
-                    'magna': 1, 'aliqua': 1, 'veniam': 1}
+expected_outputs_normal_function = {'lorem': 3, 'ipsum': 1,
+                    'magna': 1, 'aliqua': 1, 'veniam': 2}
 
 def test_threaded_word_count():
     """
@@ -58,5 +58,4 @@ def test_map_word_count():
     output = main.map_word_count(str(input_words))
     assert(output == expected_outputs_normal_function)
     
-def test_map_word_reduce():
     
