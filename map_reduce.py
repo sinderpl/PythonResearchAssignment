@@ -9,7 +9,8 @@ Threading will be used to optimise this process
 
 import concurrent.futures
 import multiprocessing as mp
-from multiprocessing import Pool
+from multiprocessing import Pool, Manager
+from functools import partial
 
 max_cores = mp.cpu_count()
 
@@ -58,7 +59,7 @@ def map_multiprocess(func, data: []) -> {}:
         output += p.map(func, data)
     return output
     
-def reduce(func, data: []) -> {}:
+def reduce_multiprocess(func, data: []) -> {}:
     """
     Reduces the inputs based on the function provided by the caller
 
@@ -74,3 +75,7 @@ def reduce(func, data: []) -> {}:
     None.
 
     """
+    output = Manager().dict()
+    with Pool(max_cores) as p:
+        p.map(partial(func, result_dictionary=output), data)
+    return output

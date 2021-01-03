@@ -57,3 +57,6 @@ def test_map_word_count():
     """
     output = main.map_word_count(str(input_words))
     assert(output == expected_outputs_normal_function)
+    
+def test_map_word_reduce():
+    
