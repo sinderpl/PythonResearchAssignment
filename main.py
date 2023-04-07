@@ -135,8 +135,8 @@ if __name__ == "__main__":
     
         #Normal code map and reduce
         #The mapping in this case also reduces by default
-    #output_map = map_word_count(str(file_content))
-    #print(output_map)
+    # output_map = map_word_count(str(file_content))
+    # print(output_map)
     
         #Here you can test the reduce method based on the output from the threaded method
     #output_map = map_reduce.map_threaded(map_word_count, file_content)
@@ -154,6 +154,6 @@ if __name__ == "__main__":
     #print(output_reduce_multiprocess)
     
         #Time testing and comparison functions
-    #assistance_functions.test_runtimes_map(file_content)
+    assistance_functions.test_runtimes_map(file_content)
     
     
